@@ -2,6 +2,18 @@ System.config({
   baseURL: "/",
   defaultJSExtensions: true,
   transpiler: "typescript",
+  typescriptOptions:{
+    "tsconfig": true,
+    "module":"commonjs",
+    "emitDecoratorMetadata": true
+  },  
+  
+  meta: {
+    "angular2/angular2": {
+      "deps": ["reflect-metadata", "zone.js", "es6-shim", "@reactivex/rxjs"]
+    }
+  },
+    
   paths: {
     "npm:*": "jspm_packages/npm/*",
     "github:*": "jspm_packages/github/*"
@@ -9,6 +21,7 @@ System.config({
 
   map: {
     "angular2": "npm:angular2@2.0.0-beta.8",
+    "angular2-polyfill": "npm:angular2-polyfill@0.0.8",
     "es6-promise": "npm:es6-promise@3.1.2",
     "es6-shim": "github:es-shims/es6-shim@0.35.0",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
@@ -47,6 +60,12 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "npm:angular2-polyfill@0.0.8": {
+      "angular": "npm:angular@1.5.0",
+      "camelcase": "npm:camelcase@2.1.0",
+      "dot-prop": "npm:dot-prop@2.4.0",
+      "reflect-metadata": "npm:reflect-metadata@0.1.3"
     },
     "npm:angular2@2.0.0-beta.8": {
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
@@ -186,6 +205,9 @@ System.config({
       "miller-rabin": "npm:miller-rabin@4.0.0",
       "randombytes": "npm:randombytes@2.0.3",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:dot-prop@2.4.0": {
+      "is-obj": "npm:is-obj@1.0.0"
     },
     "npm:elliptic@6.2.3": {
       "bn.js": "npm:bn.js@4.10.5",
